@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 		s.name 				= "Promise"
-		s.version 			= "0.0.1"
+		s.version 			= "1.0.0"
 		s.summary         	= "Sort description of 'Promise' framework"
 	    s.homepage        	= "https://github.com/amine2233/Promise"
 	    s.license           = { type: 'MIT', file: 'LICENSE' }
@@ -16,7 +16,9 @@ Pod::Spec.new do |s|
     		'SWIFT_VERSION' => '4.1'
   		}
   		s.swift_version = '4.1'
+
   		s.module_name = s.name
-  		s.dependency 'Reactive', :git => 'https://github.com/amine2233/Reactive'
-  		s.dependency 'Result', :git => 'https://github.com/amine2233/Result'
+  		
+  		s.dependency 'Reactive', '~> 1.0.0'
+  		s.dependency 'ResultKit', '~> 1.1.3'
 	end
