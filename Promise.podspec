@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 		s.name 				= "Promise"
-		s.version 			= "1.0.0"
+		s.version 			= "1.1.0"
 		s.summary         	= "Sort description of 'Promise' framework"
 	    s.homepage        	= "https://github.com/amine2233/Promise"
 	    s.license           = { type: 'MIT', file: 'LICENSE' }
