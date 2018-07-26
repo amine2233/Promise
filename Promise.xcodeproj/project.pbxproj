@@ -24,11 +24,11 @@
 		6777F32D210852A0005069F3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32B2108529F005069F3 /* Result.framework */; };
 		6777F32E210852A0005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32C210852A0005069F3 /* Reactive.framework */; };
 		6777F331210852AD005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32F210852AC005069F3 /* Reactive.framework */; };
-		6777F332210852AD005069F3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F330210852AD005069F3 /* Result.framework */; };
 		6777F334210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		6777F335210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		6777F336210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		6777F337210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
+		678859D5210A626B00DB1729 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F330210852AD005069F3 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,8 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				678859D5210A626B00DB1729 /* Result.framework in Frameworks */,
 				6777F331210852AD005069F3 /* Reactive.framework in Frameworks */,
-				6777F332210852AD005069F3 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
