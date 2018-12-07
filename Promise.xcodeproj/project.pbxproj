@@ -29,6 +29,8 @@
 		6777F336210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		6777F337210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		678859D5210A626B00DB1729 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F330210852AD005069F3 /* Result.framework */; };
+		67B7F22D21BAA14B003554AC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F330210852AD005069F3 /* Result.framework */; };
+		67B7F22E21BAA15D003554AC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32B2108529F005069F3 /* Result.framework */; };
 		67CBF59721BA3EB4003A992D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32421085281005069F3 /* Result.framework */; };
 		67D1431921B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
 		67D1431A21B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
@@ -138,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B7F22E21BAA15D003554AC /* Result.framework in Frameworks */,
 				6777F2E621084D40005069F3 /* Promise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B7F22D21BAA14B003554AC /* Result.framework in Frameworks */,
 				6777F30221084D56005069F3 /* Promise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +353,7 @@
 				6777F2E121084D40005069F3 /* Sources */,
 				6777F2E221084D40005069F3 /* Frameworks */,
 				6777F2E321084D40005069F3 /* Resources */,
+				67B7F22B21BAA0CA003554AC /* Run Carthage */,
 			);
 			buildRules = (
 			);
@@ -386,6 +391,7 @@
 				6777F2FD21084D56005069F3 /* Sources */,
 				6777F2FE21084D56005069F3 /* Frameworks */,
 				6777F2FF21084D56005069F3 /* Resources */,
+				67B7F22C21BAA0EB003554AC /* Run Carthage */,
 			);
 			buildRules = (
 			);
@@ -512,6 +518,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		67B7F22B21BAA0CA003554AC /* Run Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/Result.framework",
+			);
+			name = "Run Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		67B7F22C21BAA0EB003554AC /* Run Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/macOS/Result.framework",
+			);
+			name = "Run Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		67CBF59821BA3ECA003A992D /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
