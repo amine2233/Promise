@@ -29,6 +29,17 @@
 		6777F336210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		6777F337210852CB005069F3 /* ObservableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F333210852CB005069F3 /* ObservableExtension.swift */; };
 		678859D5210A626B00DB1729 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F330210852AD005069F3 /* Result.framework */; };
+		67CBF59721BA3EB4003A992D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32421085281005069F3 /* Result.framework */; };
+		67D1431921B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
+		67D1431A21B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
+		67D1431B21B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
+		67D1431C21B9CCE40041AC16 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431821B9CCE40041AC16 /* Future.swift */; };
+		67D1431E21B9E2560041AC16 /* FutureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431D21B9E2560041AC16 /* FutureTest.swift */; };
+		67D1432721B9EAB50041AC16 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1432621B9EAB50041AC16 /* FutureExtension.swift */; };
+		67D1432821B9EAB50041AC16 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1432621B9EAB50041AC16 /* FutureExtension.swift */; };
+		67D1432921B9EAB50041AC16 /* FutureExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1432621B9EAB50041AC16 /* FutureExtension.swift */; };
+		67D1432A21B9EABB0041AC16 /* FutureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431D21B9E2560041AC16 /* FutureTest.swift */; };
+		67D1432B21B9EABB0041AC16 /* FutureTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D1431D21B9E2560041AC16 /* FutureTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +92,9 @@
 		6777F32F210852AC005069F3 /* Reactive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reactive.framework; path = Carthage/Build/Mac/Reactive.framework; sourceTree = "<group>"; };
 		6777F330210852AD005069F3 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		6777F333210852CB005069F3 /* ObservableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableExtension.swift; sourceTree = "<group>"; };
+		67D1431821B9CCE40041AC16 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		67D1431D21B9E2560041AC16 /* FutureTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureTest.swift; sourceTree = "<group>"; };
+		67D1432621B9EAB50041AC16 /* FutureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CBF59721BA3EB4003A992D /* Result.framework in Frameworks */,
 				6777F2BD21084D26005069F3 /* Promise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +195,7 @@
 				6777F31721084E02005069F3 /* Info-watchOS.plist */,
 				6777F31221084DF6005069F3 /* Promise.h */,
 				6777F333210852CB005069F3 /* ObservableExtension.swift */,
+				67D1431821B9CCE40041AC16 /* Future.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -191,6 +207,8 @@
 				6777F32021084E1F005069F3 /* Info-macOS-Tests.plist */,
 				6777F32121084E1F005069F3 /* Info-tvOS-Tests.plist */,
 				6777F31B21084E14005069F3 /* Promise_iOSTests.swift */,
+				67D1431D21B9E2560041AC16 /* FutureTest.swift */,
+				67D1432621B9EAB50041AC16 /* FutureExtension.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -274,6 +292,7 @@
 				6777F2B821084D26005069F3 /* Sources */,
 				6777F2B921084D26005069F3 /* Frameworks */,
 				6777F2BA21084D26005069F3 /* Resources */,
+				67CBF59821BA3ECA003A992D /* Run Carthage */,
 			);
 			buildRules = (
 			);
@@ -493,6 +512,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		67CBF59821BA3ECA003A992D /* Run Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			name = "Run Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		AABBA5232108B3D800C6C34D /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,7 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		AABBA5242108B3E500C6C34D /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -572,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1431921B9CCE40041AC16 /* Future.swift in Sources */,
 				6777F334210852CB005069F3 /* ObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +620,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1431E21B9E2560041AC16 /* FutureTest.swift in Sources */,
 				6777F31C21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
+				67D1432721B9EAB50041AC16 /* FutureExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1431A21B9CCE40041AC16 /* Future.swift in Sources */,
 				6777F335210852CB005069F3 /* ObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1431B21B9CCE40041AC16 /* Future.swift in Sources */,
 				6777F336210852CB005069F3 /* ObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1432821B9EAB50041AC16 /* FutureExtension.swift in Sources */,
+				67D1432A21B9EABB0041AC16 /* FutureTest.swift in Sources */,
 				6777F31D21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1431C21B9CCE40041AC16 /* Future.swift in Sources */,
 				6777F337210852CB005069F3 /* ObservableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +667,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67D1432921B9EAB50041AC16 /* FutureExtension.swift in Sources */,
+				67D1432B21B9EABB0041AC16 /* FutureTest.swift in Sources */,
 				6777F31E21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +697,7 @@
 		6777F2AC21084CF6005069F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -682,6 +732,7 @@
 		6777F2AD21084CF6005069F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -911,6 +962,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -984,6 +1039,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1372,6 +1431,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1444,6 +1507,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1673,6 +1740,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1746,6 +1817,10 @@
 				DEVELOPMENT_TEAM = FBZ344S5M3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
