@@ -8,18 +8,18 @@
 import Foundation
 import Result
 
-public struct Future<T,E: Error> {
-    
-    //MARK: - Typealias
-    public typealias Completion = (Result<T,E>) -> Void
+public struct Future<T, E: Error> {
+
+    // MARK: - Typealias
+    public typealias Completion = (Result<T, E>) -> Void
     public typealias AsyncOperation = (@escaping Completion) -> Void
     public typealias FailureCompletion = (E) -> Void
     public typealias SuccessCompletion = (T) -> Void
-    
-    //MARK: - Properties
+
+    // MARK: - Properties
     private let operation: AsyncOperation
-    
-    //MARK: - Initialization
+
+    // MARK: - Initialization
     /**
      Initialize a new `Future` with the provided `Result`.
      
@@ -33,12 +33,12 @@ public struct Future<T,E: Error> {
      
      - Returns: A new `Future`.
      */
-    public init(result: Result<T,E>) {
+    public init(result: Result<T, E>) {
         self.init { completion in
             completion(result)
         }
     }
-    
+
     /**
      Initialize a new `Future` with the provided value.
      
@@ -55,7 +55,7 @@ public struct Future<T,E: Error> {
     public init(value: T) {
         self.init(result: .success(value))
     }
-    
+
     /**
      Initialize a new `Future` with the provided `Error`.
      
@@ -71,7 +71,7 @@ public struct Future<T,E: Error> {
     public init(error: E) {
         self.init(result: .failure(error))
     }
-    
+
     /**
      Initialize a new `Future` with the provided operation.
      
@@ -97,8 +97,8 @@ public struct Future<T,E: Error> {
     public init(operation: @escaping (_ completion:@escaping Completion) -> Void) {
         self.operation = operation
     }
-    
-    //MARK: - Actions
+
+    // MARK: - Actions
     /**
      Execute the operation.
      
@@ -120,11 +120,11 @@ public struct Future<T,E: Error> {
         - completion: the completion block of the operation. It has the `Result` of the operation as parameter.
      */
     public func execute(completion: @escaping Completion) {
-        self.operation() { value in
+        self.operation { value in
             completion(value)
         }
     }
-    
+
     /**
      Execute the operation. Example usage
      
@@ -142,7 +142,7 @@ public struct Future<T,E: Error> {
         - onFailure: the failure completion block of the operation. It has the error of the operation as parameter.
      */
     public func execute(onSuccess: @escaping SuccessCompletion, onFailure: FailureCompletion? = nil) {
-        self.operation() { result in
+        self.operation { result in
             switch result {
             case .success(let value):
                 onSuccess(value)
@@ -154,7 +154,7 @@ public struct Future<T,E: Error> {
 }
 
 extension Future {
-    
+
     /**
      Chain two depending futures providing a function that gets the value of this future as parameter
      and then creates new one
@@ -182,8 +182,8 @@ extension Future {
      
      - Returns: New chained Future
      */
-    public func andThen<U>(_ transform: @escaping (_ value: T) -> Future<U,E>) -> Future<U,E> {
-        return Future<U,E>(operation: { completion in
+    public func andThen<U>(_ transform: @escaping (_ value: T) -> Future<U, E>) -> Future<U, E> {
+        return Future<U, E>(operation: { completion in
             self.execute(onSuccess: { value in
                 transform(value).execute(completion: completion)
             }, onFailure: { error in
@@ -191,7 +191,7 @@ extension Future {
             })
         })
     }
-    
+
     /**
      Creates a new Future by applying a function to the successful result of this future.
      If this future is completed with an error then the new future will also contain this error
@@ -206,8 +206,8 @@ extension Future {
      
      - Returns: New Future
      */
-    public func map<U>(_ transform: @escaping (_ value: T) -> U) -> Future<U,E> {
-        return Future<U,E>(operation: { completion in
+    public func map<U>(_ transform: @escaping (_ value: T) -> U) -> Future<U, E> {
+        return Future<U, E>(operation: { completion in
             self.execute(onSuccess: { value in
                 completion(.success(transform(value)))
             }, onFailure: { error in

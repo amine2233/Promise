@@ -14,9 +14,6 @@
 		6777F31421084DF6005069F3 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F31221084DF6005069F3 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F31521084DF6005069F3 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F31221084DF6005069F3 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6777F31621084DF6005069F3 /* Promise.h in Headers */ = {isa = PBXBuildFile; fileRef = 6777F31221084DF6005069F3 /* Promise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6777F31C21084E14005069F3 /* Promise_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F31B21084E14005069F3 /* Promise_iOSTests.swift */; };
-		6777F31D21084E14005069F3 /* Promise_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F31B21084E14005069F3 /* Promise_iOSTests.swift */; };
-		6777F31E21084E14005069F3 /* Promise_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777F31B21084E14005069F3 /* Promise_iOSTests.swift */; };
 		6777F32521085281005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32321085281005069F3 /* Reactive.framework */; };
 		6777F32621085281005069F3 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32421085281005069F3 /* Result.framework */; };
 		6777F32921085291005069F3 /* Reactive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6777F32721085291005069F3 /* Reactive.framework */; };
@@ -81,7 +78,6 @@
 		6777F31821084E02005069F3 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		6777F31921084E02005069F3 /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
 		6777F31A21084E02005069F3 /* Info-macOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS.plist"; sourceTree = "<group>"; };
-		6777F31B21084E14005069F3 /* Promise_iOSTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise_iOSTests.swift; sourceTree = "<group>"; };
 		6777F31F21084E1F005069F3 /* Info-iOS-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS-Tests.plist"; sourceTree = "<group>"; };
 		6777F32021084E1F005069F3 /* Info-macOS-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-macOS-Tests.plist"; sourceTree = "<group>"; };
 		6777F32121084E1F005069F3 /* Info-tvOS-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS-Tests.plist"; sourceTree = "<group>"; };
@@ -210,7 +206,6 @@
 				6777F31F21084E1F005069F3 /* Info-iOS-Tests.plist */,
 				6777F32021084E1F005069F3 /* Info-macOS-Tests.plist */,
 				6777F32121084E1F005069F3 /* Info-tvOS-Tests.plist */,
-				6777F31B21084E14005069F3 /* Promise_iOSTests.swift */,
 				67D1431D21B9E2560041AC16 /* FutureTest.swift */,
 				67D1432621B9EAB50041AC16 /* FutureExtension.swift */,
 			);
@@ -279,6 +274,7 @@
 				6777F2B021084D26005069F3 /* Headers */,
 				6777F2B121084D26005069F3 /* Resources */,
 				AABBA5232108B3D800C6C34D /* Run Carthage */,
+				67FDAD7921BD42E4004DBF69 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -317,6 +313,7 @@
 				6777F2CD21084D31005069F3 /* Headers */,
 				6777F2CE21084D31005069F3 /* Resources */,
 				AABBA5242108B3E500C6C34D /* Run Carthage */,
+				67FDAD7A21BD4303004DBF69 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -336,6 +333,7 @@
 				6777F2DA21084D40005069F3 /* Headers */,
 				6777F2DB21084D40005069F3 /* Resources */,
 				AABBA5252108B3EB00C6C34D /* Run Carthage */,
+				67FDAD7B21BD4315004DBF69 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -374,6 +372,7 @@
 				6777F2F621084D56005069F3 /* Headers */,
 				6777F2F721084D56005069F3 /* Resources */,
 				AABBA5262108B3F200C6C34D /* Run Carthage */,
+				67FDAD7C21BD4323004DBF69 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -578,6 +577,78 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		67FDAD7921BD42E4004DBF69 /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /usr/local/bin/swiftlint >/dev/null; then\n/usr/local/bin/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		67FDAD7A21BD4303004DBF69 /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /usr/local/bin/swiftlint >/dev/null; then\n/usr/local/bin/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		67FDAD7B21BD4315004DBF69 /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /usr/local/bin/swiftlint >/dev/null; then\n/usr/local/bin/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		67FDAD7C21BD4323004DBF69 /* Run swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /usr/local/bin/swiftlint >/dev/null; then\n/usr/local/bin/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		AABBA5232108B3D800C6C34D /* Run Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -667,7 +738,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				67D1431E21B9E2560041AC16 /* FutureTest.swift in Sources */,
-				6777F31C21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
 				67D1432721B9EAB50041AC16 /* FutureExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,7 +766,6 @@
 			files = (
 				67D1432821B9EAB50041AC16 /* FutureExtension.swift in Sources */,
 				67D1432A21B9EABB0041AC16 /* FutureTest.swift in Sources */,
-				6777F31D21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +784,6 @@
 			files = (
 				67D1432921B9EAB50041AC16 /* FutureExtension.swift in Sources */,
 				67D1432B21B9EABB0041AC16 /* FutureTest.swift in Sources */,
-				6777F31E21084E14005069F3 /* Promise_iOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,29 +11,28 @@ import Result
 @testable import Promise
 
 class FutureTest: XCTestCase {
-    
+
     enum TestError: Error {
         case empty
     }
 
-    let futureWithValue = Future<Int,TestError>(value: 1)
-    let futureWithError = Future<Int,TestError>(error: .empty)
-    let futureWithResultValue = Future<Int,TestError>(result: Result.success(1))
-    let futureWithResultError = Future<Int,TestError>(result: Result.failure(.empty))
-    let futureWithSuccessOperation = Future<Int,TestError> { completion in
+    let futureWithValue = Future<Int, TestError>(value: 1)
+    let futureWithError = Future<Int, TestError>(error: .empty)
+    let futureWithResultValue = Future<Int, TestError>(result: Result.success(1))
+    let futureWithResultError = Future<Int, TestError>(result: Result.failure(.empty))
+    let futureWithSuccessOperation = Future<Int, TestError> { completion in
         DispatchQueue.global().asyncAfter(deadline: .now() + 1, execute: {
             completion(.success(1))
         })
     }
     let futureWithFailureOperation = Future<Int, TestError> { completion in
-        DispatchQueue.global().asyncAfter(deadline: .now() + 1 , execute: {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1, execute: {
             completion(.failure(.empty))
         })
     }
-    
-    let futureWithValueString = Future<String,TestError>(value: "1")
 
-    
+    let futureWithValueString = Future<String, TestError>(value: "1")
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -49,29 +48,29 @@ class FutureTest: XCTestCase {
             expectedValue = value
             expectation.fulfill()
         })
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, 1, "future should have a correct value")
     }
-    
+
     func testFutureWithFailure() {
         let expectation = self.expectation(description: "future should fail")
-        var expectedError: TestError? = nil
-        
+        var expectedError: TestError?
+
         futureWithError.execute(onSuccess: { _ in}, onFailure: { error in
             expectedError = error
             expectation.fulfill()
         })
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedError, "future should fail with an error")
         XCTAssertEqual(expectedError, TestError.empty)
     }
-    
+
     func testFutureWithResultValue() {
         let expectation = self.expectation(description: "future has correct value")
         var expectedValue = 0
-        
+
         futureWithResultValue.execute(onSuccess: { value in
             expectedValue = value
             expectation.fulfill()
@@ -79,11 +78,11 @@ class FutureTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, 1, "future should have a correct value")
     }
-    
+
     func testFutureWithResultError() {
         let expectation = self.expectation(description: "future should fail")
-        var expectedError: Error? = nil
-        
+        var expectedError: Error?
+
         futureWithResultError.execute(onSuccess: {_ in}, onFailure: { error in
             expectedError = error
             expectation.fulfill()
@@ -91,11 +90,11 @@ class FutureTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedError, "future should fail with an error")
     }
-    
+
     func testFutureWithSuccessOperation() {
         let expectation = self.expectation(description: "future has correct value")
         var expectedValue = 0
-        
+
         futureWithSuccessOperation.execute(onSuccess: { value in
             expectedValue = value
             expectation.fulfill()
@@ -103,11 +102,11 @@ class FutureTest: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertEqual(expectedValue, 1, "future should have a correct value")
     }
-    
+
     func testFutureWithFailureOperation() {
         let expectation = self.expectation(description: "future should fail")
-        var expectedError: Error? = nil
-        
+        var expectedError: Error?
+
         futureWithFailureOperation.execute(onSuccess: {_ in}, onFailure: { error in
             expectedError = error
             expectation.fulfill()

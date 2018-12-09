@@ -16,8 +16,8 @@ class FutureExtension: XCTestCase {
         case empty
     }
 
-    let futureWithValue = Future<Int,TestError>(value: 1)
-    let futureWithError = Future<Int,TestError>(error: .empty)
+    let futureWithValue = Future<Int, TestError>(value: 1)
+    let futureWithError = Future<Int, TestError>(error: .empty)
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -31,68 +31,68 @@ class FutureExtension: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-    
+
     func testFutureWithAndThenWithValue() {
         let expectation = self.expectation(description: "future has correct value")
         var expectedValue: String?
-        
+
         futureWithValue.andThen { value -> Future<String, TestError> in
-            return Future<String,TestError>(value: "\(value)")
+            return Future<String, TestError>(value: "\(value)")
         }.execute { result in
             expectedValue = result.value
             expectation.fulfill()
         }
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedValue)
         XCTAssertEqual(expectedValue, "1", "future should have a correct value")
     }
-    
+
     func testFutureWithAndThenWithFailure() {
         let expectation = self.expectation(description: "future should fail")
         var expectedError: TestError?
-        
-        futureWithError.andThen { value -> Future<String, TestError> in
-            return Future<String,TestError>(error: .empty)
+
+        futureWithError.andThen { _ -> Future<String, TestError> in
+            return Future<String, TestError>(error: .empty)
         }.execute(onSuccess: { _ in }, onFailure: { error in
             expectedError = error
             expectation.fulfill()
         })
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedError)
-        XCTAssertEqual(expectedError,TestError.empty, "future should fail with an error")
+        XCTAssertEqual(expectedError, TestError.empty, "future should fail with an error")
     }
-    
+
     func testFutureWithMapWithValue() {
         let expectation = self.expectation(description: "future has correct value")
         var expectedValue: String?
-        
+
         futureWithValue.map { (value) in
             return "\(value)"
         }.execute(onSuccess: { (value) in
             expectedValue = value
             expectation.fulfill()
         })
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedValue)
         XCTAssertEqual(expectedValue, "1", "future should have a correct value")
     }
-    
+
     func testFutureWithMapWithFailure() {
         let expectation = self.expectation(description: "future should fail")
         var expectedError: TestError?
-        
-        futureWithError.map { value in
+
+        futureWithError.map { _ in
             return ""
         }.execute(onSuccess: { _ in }, onFailure: { error in
             expectedError = error
             expectation.fulfill()
         })
-        
+
         waitForExpectations(timeout: 5, handler: nil)
         XCTAssertNotNil(expectedError)
-        XCTAssertEqual(expectedError,TestError.empty, "future should fail with an error")
+        XCTAssertEqual(expectedError, TestError.empty, "future should fail with an error")
     }
 }
