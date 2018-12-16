@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 		s.name 				= "Promise"
-		s.version 			= "2.0.0"
+		s.version 			= "2.0.1"
 		s.summary         	= "Sort description of 'Promise' framework"
 	    s.homepage        	= "https://github.com/amine2233/Promise"
 	    s.license           = { type: 'MIT', file: 'LICENSE' }
@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   		s.module_name = s.name
   		
   		s.dependency 'Reactive', '~> 2.0.0'
-  		s.dependency 'ResultKit', '~> 2.1.0'
+  		s.dependency 'ResultKit', '~> 2.2.0'
 	end
