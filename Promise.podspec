@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
 
   		s.module_name = s.name
   		
-  		s.dependency 'Reactive', '~> 2.0.1'
-  		s.dependency 'ResultKit', '~> 2.2.0'
+  		s.dependency 'Reactive', '~> 2.0.2'
+  		s.dependency 'ResultKit', '~> 2.3.0'
 	end
