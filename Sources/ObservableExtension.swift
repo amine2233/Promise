@@ -9,7 +9,7 @@ import Foundation
 import Reactive
 import Result
 
-public extension Observable {
+extension Observable {
     public func map<U, Error>(_ transform: @escaping (T) throws -> U) -> Observable<Result<U, Error>> {
         let observable = Observable<Result<U, Error>>(options: options)
         subscribe { value in
@@ -19,7 +19,7 @@ public extension Observable {
     }
 }
 
-public extension Observable where T: ResultProtocol {
+extension Observable where T: ResultProtocol {
 
     /// Observables containing a Result<Value,Error> can be chained to only continue in the success case.
     public func then<U, Error>(_ transform: @escaping (T.Value) -> Result<U, Error>) -> Observable<Result<U, Error>> {
